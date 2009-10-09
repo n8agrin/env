@@ -1,0 +1,30 @@
+# This file defines some common environment settings needed to properly
+# setup, run and hack splunk in a BSD-like environment
+
+### Splunk ###
+export SPLUNK_SOURCE_ROOT="$HOME/code/splunk"
+export SPLUNK_BRANCH_NAME=`cat $SPLUNK_SOURCE_ROOT/.current_branch`
+export SPLUNK_HOME="$HOME/splunk/$SPLUNK_BRANCH_NAME"
+export SPLUNK_SRC="$SPLUNK_SOURCE_ROOT/$SPLUNK_BRANCH_NAME"
+export PATH=$SPLUNK_HOME/bin:$PATH
+
+# I've never needed these but the build guide says to use them
+export LD_LIBRARY_PATH=$SPLUNK_HOME/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=$SPLUNK_HOME/lib/pkgconfig
+
+# Include the splunk default env settings
+source $SPLUNK_HOME/bin/setSplunkEnv
+
+# Echo the current env
+echo SELECTED SPLUNK BRANCH NAME IS: $SPLUNK_BRANCH_NAME
+echo SPLUNK SRC: $SPLUNK_SRC
+echo SPLUNK HOME: $SPLUNK_HOME
+
+# Some shortcuts for Splunk stuff
+export apps=$HOME/code/splunk/apps
+export web="$SPLUNK_SRC/web/search_mrsparkle"
+export cfg="$SPLUNK_SRC/cfg"
+export py="$SPLUNK_SRC/python-site/splunk"
+export test="$SPLUNK_SRC/test"
+export selenium="$test/tests/web/selenium"
+
