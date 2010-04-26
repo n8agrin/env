@@ -3,6 +3,17 @@
 
 ### Splunk ###
 export SPLUNK_SOURCE_ROOT="$HOME/code/splunk"
+
+if [ ! -f $SPLUNK_SOURCE_ROOT/.current_branch ]; then
+    if [ ! -d $SPLUNK_SOURCE_ROOT ]; then
+        echo "$SPLUNK_SOURCE_ROOT doesn't exist. Creating it..."
+        mkdir -p $SPLUNK_SOURCE_ROOT
+    fi
+    echo "No .current_branch file for Splunk management. Creating one now..."
+    touch $SPLUNK_SOURCE_ROOT/.current_branch
+    echo "current" > $SPLUNK_SOURCE_ROOT/.current_branch
+fi
+
 export SPLUNK_BRANCH_NAME=`cat $SPLUNK_SOURCE_ROOT/.current_branch`
 export SPLUNK_HOME="$HOME/splunk/$SPLUNK_BRANCH_NAME"
 export SPLUNK_SRC="$SPLUNK_SOURCE_ROOT/$SPLUNK_BRANCH_NAME"
