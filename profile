@@ -1,5 +1,5 @@
 ###$MYENV path ###
-MYENV='$MYENV'
+MYENV='.env'
 
 ### Special Mac Configs ###
 if [[ `uname -a` =~ "Darwin" ]]; then
@@ -71,4 +71,3 @@ fi
 
 
 
-        
