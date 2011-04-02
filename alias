@@ -1,12 +1,2 @@
-### Alias ###
+### Aliases ###
 alias l='ls -la'
-
-# Pulled in from twitter alias
-alias twitter='cd ~/workspace/twitter'
-alias summize='cd ~/workspace/summize'
-alias search='cd ~/workspace/twitter-search'
-alias earlybird='cd ~/workspace/search'
-alias sms='cd ~/workspace/twitter-sms'
-alias ops='cd ~/workspace/twitter-ops'
-alias blender='cd ~/workspace/search/blender'
-alias gems='cd /Library/Ruby/Gems/1.8/gems/'
