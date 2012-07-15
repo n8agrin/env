@@ -1,18 +1,26 @@
 MYENV='.env'
 
-export PATH=/usr/local/bin:$PATH
+#export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+export NODE_PATH="/usr/local/lib/node_modules"
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:~/node_modules/.bin:$PATH
+export PATH=/usr/local/share/python:$PATH
+eval "$(rbenv init -)"
+
+export DJANGO_SETTINGS_MODULE=sqlcharts.settings
+export PYTHONPATH=/Users/nate/chartio/sqlcharts:/Users/nate/chartio/sqlcharts/sqlcharts
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
+
+  if [ "$USER" = "root" ]; then
+    PS1='\e[1;31m[\u@\h \W$(__git_ps1 " (%s)")]\$\e[0m '
+  else
+    PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '
+  fi
 fi
 
-if [ "$USER" = "root" ]; then
-  PS1='\e[1;31m[\u@\h \W$(__git_ps1 " (%s)")]\$\e[0m '
-else
-  PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '
-fi
 
 ### Special Mac Configs ###
 
