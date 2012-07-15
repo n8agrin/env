@@ -1,0 +1,22 @@
+[alias]
+br = branch
+brs = branches
+logb = !$HG branch | xargs $HG log -b 
+
+[ui]
+username = Nate Agrin <nate@chart.io>
+verbose = True
+
+[extensions]
+color =
+mq =
+pager =
+reviewboard = /Users/nate/hg_modules/mercurial-reviewboard
+
+[pager]
+pager = LESS='FSRX' less
+
+[reviewboard]
+server = http://reviewboard.chartiodev.com/
+user = nate
+password = onebucketbluelaser
