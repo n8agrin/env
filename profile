@@ -1,6 +1,5 @@
 MYENV='.env'
 
-#export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 export NODE_PATH="/usr/local/lib/node_modules"
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:~/node_modules/.bin:$PATH
 export PATH=/usr/local/share/python:$PATH
@@ -8,8 +7,6 @@ eval "$(rbenv init -)"
 
 export DJANGO_SETTINGS_MODULE=sqlcharts.settings
 export PYTHONPATH=/Users/nate/chartio/sqlcharts:/Users/nate/chartio/sqlcharts/sqlcharts
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
@@ -21,55 +18,9 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   fi
 fi
 
-
-### Special Mac Configs ###
-
-# For colors see installation instructions here:
-# http://blog.infinitered.com/entries/show/6
-# Also be sure to start Terminal.app in 32 bit mode
-export CLICOLOR=1;
-
-# if [[ `uname -a` =~ "Darwin" ]]; then
-# 
-#    # Colors #
-#    # Colors
-#    # The available color codes are:
-#    #
-#    #    a -- black
-#    #    b -- red
-#    #    c -- green
-#    #    d -- brown
-#    #    e -- blue
-#    #    f -- magenta
-#    #    g -- cyan
-#    #    h -- light gray
-#    #    A -- bold black, usually shows up as dark gray
-#    #    B -- bold red
-#    #    C -- bold green
-#    #    D -- bold brown, usually shows up as yellow
-#    #    E -- bold blue
-#    #    F -- bold magenta
-#    #    G -- bold cyan
-#    #    H -- bold light gray; looks like bright white
-#    #    x -- default foreground or background
-# 
-#    # SYM_LINK=fx
-#    # SOCKET=Fx
-#    # PIPE=dx
-#    # EXE=Cx
-#    # BLOCK_SP=Dx
-#    # CHAR_SP=Dx
-#    # EXE_SUID=hb
-#    # EXE_GUID=ad
-#    # DIR=cx
-#    # DIR_STICKY=cx
-#    # DIR_WO_STICKY=fx
-#    # 
-#    # export LSCOLORS="$DIR$SYM_LINK$SOCKET$PIPE$EXE\
-#    # $BLOCK_SP$CHAR_SP$EXE_SUID$EXE_GUID\
-#    # $DIR_STICKY$DIR_WO_STICKY"
-#    export CLICOLOR=1
-# fi
+#PS1='\e[0;32m\u@\h\e[m:\e[0;34m\w\e[m\$ ' #Prompt user host:path$
+export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad
 
 # Import various other$MYENV files
 # Alias
