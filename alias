@@ -1,5 +1,1 @@
-### Aliases ###
 alias l='ls -la'
-alias qhost='python -m SimpleHTTPServer'
-alias chartjs='cd /Users/nate/chartio/sqlcharts/media/scripts/chartjs'
-alias renejs='cd /Users/nate/chartio/sqlcharts/media/scripts/renejs'

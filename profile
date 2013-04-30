@@ -1,12 +1,11 @@
-MYENV='.env'
+MYENV='projects/env'
+
+# If using rbenv, load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 export NODE_PATH="/usr/local/lib/node_modules"
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:~/node_modules/.bin:$PATH
 export PATH=/usr/local/share/python:$PATH
-eval "$(rbenv init -)"
-
-export DJANGO_SETTINGS_MODULE=sqlcharts.settings
-export PYTHONPATH=/Users/nate/chartio/sqlcharts:/Users/nate/chartio/sqlcharts/sqlcharts
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
@@ -42,5 +41,11 @@ if [ ! -h $HOME/.vimrc ]; then
     ln -s $HOME/$MYENV/vimrc $HOME/.vimrc
 fi
 
+if [ ! -h $HOME/.gitconfig ] && [ -f $HOME/.gitconfig ]; then
+    mv $HOME/.gitconfig $HOME/.gitconfig.ori
+fi
 
+if [ ! -h $HOME/.gitconfig ]; then
+    ln -s $HOME/$MYENV/gitconfig $HOME/.gitconfig
+fi
 
